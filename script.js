@@ -4,20 +4,16 @@ editor.setTheme("ace/theme/twilight"); /* Use a dark theme for the editor */
 //editor.session.setMode("ace/mode/javascript");
 
 // Custom function to display output in the output area
-function writeToOutput(...args) {
+function write(...args) {
   var outputElement = document.getElementById("output");
   var message = args.map(arg => String(arg)).join(" "); // Convert all arguments to strings and join them
   outputElement.textContent += message + "\n"; // Append the message to the output area
 }
 // Custom function to clear the output area
-function clearOutput(...args) {
+function clear(...args) {
   var outputElement = document.getElementById("output");
   outputElement.textContent = "";
 }
-// Redirect console commands to the writeToOutput function
-console.log = writeToOutput;
-console.warn = writeToOutput;
-console.error = writeToOutput;
 
 // Function to run the code using eval
 function runCode() {
